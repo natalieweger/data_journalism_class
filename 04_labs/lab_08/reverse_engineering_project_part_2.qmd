@@ -1,0 +1,51 @@
+---
+title: "reverse_engineering_part_2"
+format: html
+editor: visual
+---
+
+## Nearly **250 women have been fatally shot by police since 2015**
+
+**As with fatal police shootings of men, the vast majority of the women killed were armed with a potential weapon at the time, although slightly less often: 89 percent of the women were armed, compared to 91 percent of the men.**
+
+```{r}
+library(janitor)
+library(tidyverse)
+```
+
+Our first step was the find the data from The Washington Post and
+
+```{r}
+
+#download the data
+police_shooting <- read_csv("~/Documents/Github/fatal-police-shootings-data (2).csv")
+View(fatal_police_shootings_data_2_)
+
+```
+
+Add description about what I'm doing here
+
+```{r}
+
+women_police_shooting <- police_shooting %>% 
+  filter(gender == "F", date < "2020-09-04") %>% 
+  select (gender, armed, date)
+  view(women_police_shooting)
+  
+
+men_police_shooting <- police_shooting %>% 
+  filter(gender == "M", date < "2020-09-04") %>% 
+  select (gender, armed, date)
+  view(men_police_shooting)
+
+```
+
+**Since The Washington Post began [tracking fatal shootings by police](https://www.washingtonpost.com/graphics/investigations/police-shootings-database/) in 2015, officers have fatally shot 247 women out of the more than 5,600 people killed overall. Of the 247 women fatally shot, 48 were Black and seven of those were unarmed.**
+
+```{r}
+
+  
+
+```
+
+\
